@@ -13,14 +13,20 @@ Oct. 9, 2023
    ```
    
 * **... with a path to a _directory_ as an argument**
+   ```
+   cd lecture1/messages
+   ```
+
 * **... with a path to a _file_ as an argument**
+   ```
+   
+
 
 2. **cd:**
 `cd` means to change directory or move to another folder.
 
 * **... with no arguments**
    ```
-   cd
    ```
    
 * **... with a path to a _directory_ as an argument**
@@ -31,7 +37,6 @@ Oct. 9, 2023
 
 * **... with no arguments**
    ```
-   cd
    ```
    
 * **... with a path to a _directory_ as an argument**
