@@ -7,7 +7,9 @@ In this blog post, I will demonstrate 3 commonly used terminal commands: `cd`, `
 First we will examine (1) using the command without arguments, (2) using the command with a path to a directory/folder as its argument, and (3) using the command with a path to a file as its argument.
 
 ---
+### File System
 
+---
 
 ### 👉 `cd` changes the directory or moves us to another folder.
 
@@ -28,7 +30,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-1. **<ins>Directory Path Argument</ins>**
+2. **<ins>Directory Path Argument</ins>**
 
    Here, I show a more useful application of the `cd` command. From `/home`, I navigate to the `lecture1` directory that is inside.
 
@@ -43,7 +45,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-4. **<ins>File Path Argument</ins>**
+3. **<ins>File Path Argument</ins>**
 
    In Line 1, I execute the `cd` command with a path to a file as the argument, but I encounter an error in Line 2 that says `Hello.java` is not a directory. It makes sense that the command didn't work since `Hello.java` is a file. By definition, `cd` only works with directories.
 
@@ -58,7 +60,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    4   /home/lecture1
    ```
 
-
+---
 
 
 ### 👉 `ls` lists all the directories and files.
@@ -93,7 +95,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-4. **<ins>File Path Argument</ins>**
+3. **<ins>File Path Argument</ins>**
 
    For this case, I receive an error in Line 2 because the path that I am trying to reference, `/home/lecture1/messages/README` does not exist.
    
@@ -120,6 +122,8 @@ First we will examine (1) using the command without arguments, (2) using the com
    9   messages/el.txt
    ```
 
+---
+
 ### 👉 `cat` outputs the contents of a file into the terminal.
 
 1. **<ins>No Argument</ins>**
@@ -144,7 +148,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-3. **<ins>Directory Path Argument</ins>**
+2. **<ins>Directory Path Argument</ins>**
 
    This time, I attempt to use `cat` on a directory. It fails (Line 2)! This makes sense since `cat` is supposed to only work on files. The computer doesn't know what to do if I pass it a directory.
 
@@ -156,7 +160,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-5. **<ins>File Path Argument</ins>**
+3. **<ins>File Path Argument</ins>**
 
    Finally, here is an example of using `cat` with a valid file. The output is the printed contents of the `es-mx.txt` file. The file says "Hello World!" in Spanish. This test was a success because that is exactly what shows up in the terminal.
    ```
