@@ -1,4 +1,4 @@
-# Lab Report 1 - FileSystem
+# Lab Report 1 - File System
 
 Oct. 9, 2023
 
