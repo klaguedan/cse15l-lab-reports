@@ -7,7 +7,11 @@ In this blog post, I will demonstrate 3 commonly used terminal commands: `cd`, `
 First we will examine (1) using the command without arguments, (2) using the command with a path to a directory/folder as its argument, and (3) using the command with a path to a file as its argument.
 
 ---
+
 ### File System
+<div align="center">
+   <img src="lab01_filesystem.png" width="400px"/>
+</div>
 
 ---
 
