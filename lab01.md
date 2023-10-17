@@ -19,26 +19,23 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 1. **<ins>No Argument</ins>**
 
-   In this example, we can see that it's possible to run `cd` without arguments. However, since I provided it no argument—no other directory to change to—it didn't do anything noticeable.
+   **Corrected:**
+   I've realized that having the working directory set to `/home` already was probably the worst circumstance to test what `cd` does without arguments. So, in the corrected version I will set my working directory to `/home/lecture1`. In this case, we can more clearly see that what `cd` does without arguments is move us back to the home directory which is `/home` for me. This produces no errors and is a completely valid way to use the command.
 
-   The terminal gave no error message (and no output at all, actually!) and this may be because `cd` does not really have anything to output, it just performs a simple action on the user.  Lines 2-3 confirm that our working directory did not change.
-
-
-   
    ```
-   WORKING DIRECTORY: /home
+   WORKING DIRECTORY: /home/lecture1
    
-   1   [user@sahara ~]$ cd
-   2   [user@sahara ~]$ pwd
-   3   /home
+   1   [user@sahara ~]$ cd lecture1
+   2   [user@sahara ~/lecture1]$ cd
+   3   [user@sahara ~]$ pwd
+   4   /home
    ```
 
-
-2. **<ins>Directory Path Argument</ins>**
+3. **<ins>Directory Path Argument</ins>**
 
    Here, I show a more useful application of the `cd` command. From `/home`, I navigate to the `lecture1` directory that is inside.
 
-   Like with the previous case, `cd` did not output anything either and it does not need to for its purposes. In Line 2, I use `pwd` to confirm that the working directory had moved to `/home/lecture1`. Another place that reflects this change is the shell prompt itself. Specifically, in Line 1 the prompt only says `[user@sahara ~]$` but in Line 2 it says `[user@sahara ~/lecture1]$`. So, this is another way to see that the `cd` command was successful.
+   Like with the previous case, `cd` did not output anything either and it does not need to for its purposes. In Line 2, I use `pwd` to confirm that the working directory had moved to `/home/lecture1`. Another place that reflects this change is the shell prompt itself. Specifically, in Line 1 the prompt only says `[user@sahara ~]$` but in Line 2 it says `[user@sahara ~/lecture1]$`. So, this is another way to see that the `cd` command was successful. **Corrected:** There were no errors as the `cd` command did exactly what we expected it to.
 
    ```
    WORKING DIRECTORY: /home
@@ -49,7 +46,7 @@ First we will examine (1) using the command without arguments, (2) using the com
    ```
 
 
-3. **<ins>File Path Argument</ins>**
+4. **<ins>File Path Argument</ins>**
 
    In Line 1, I execute the `cd` command with a path to a file as the argument, but I encounter an error in Line 2 that says `Hello.java` is not a directory. It makes sense that the command didn't work since `Hello.java` is a file. By definition, `cd` only works with directories.
 
@@ -71,7 +68,7 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 1. **<ins>No Argument</ins>**
 
-   While in `/home/lecture1/messages/`, `ls` with no arguments is successful. In Line 2, the command outputs a whole list of the files within the working directory. Even though we did not use the command with an argument, it seems to default to the current working directory.
+   While in `/home/lecture1/messages/`, `ls` with no arguments is successful. In Line 2, the command outputs a whole list of the files within the working directory. Even though we did not use the command with an argument, it seems to default to the current working directory. **Corrected:** This is not an error; `ls` does exactly what it is supposed to do.
 
    ```
    WORKING DIRECTORY: /home/lecture1/messages
@@ -154,7 +151,7 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 2. **<ins>Directory Path Argument</ins>**
 
-   This time, I attempt to use `cat` on a directory. It fails (Line 2)! This makes sense since `cat` is supposed to only work on files. The computer doesn't know what to do if I pass it a directory.
+   This time, I attempt to use `cat` on a directory. It fails (Line 2)! **Corrected:** This is an error because I am not able to use `cat` on directories! This makes sense since `cat` is supposed to only work on files. The computer doesn't know what to do if I pass it a directory.
 
    ```
    WORKING DIRECTORY: /home
@@ -166,7 +163,7 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 3. **<ins>File Path Argument</ins>**
 
-   Finally, here is an example of using `cat` with a valid file. The output is the printed contents of the `es-mx.txt` file. The file says "Hello World!" in Spanish. This test was a success because that is exactly what shows up in the terminal.
+   Finally, here is an example of using `cat` with a valid file. The output is the printed contents of the `es-mx.txt` file. The file says "Hello World!" in Spanish. This test was a success because that is exactly what shows up in the terminal. 
    ```
    WORKING DIRECTORY: /home
    
