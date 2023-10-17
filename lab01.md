@@ -163,7 +163,7 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 3. **<ins>File Path Argument</ins>**
 
-   Finally, here is an example of using `cat` with a valid file. The output is the printed contents of the `es-mx.txt` file. The file says "Hello World!" in Spanish. This test was a success because that is exactly what shows up in the terminal. 
+   Finally, here is an example of using `cat` with a valid file. The output is the printed contents of the `es-mx.txt` file. The file says "Hello World!" in Spanish. **Corrected:** There are no errors; this test was a success because the output in the terminal is what I expected.
    ```
    WORKING DIRECTORY: /home
    
