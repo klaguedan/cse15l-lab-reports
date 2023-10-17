@@ -20,15 +20,14 @@ First we will examine (1) using the command without arguments, (2) using the com
 1. **<ins>No Argument</ins>**
 
    **Corrected:**
-   I've realized that having the working directory set to `/home` already was probably the worst circumstance to test what `cd` does without arguments. So, in the corrected version I will set my working directory to `/home/lecture1`. In this case, we can more clearly see that what `cd` does without arguments is move us back to the home directory which is `/home` for me. This produces no errors and is a completely valid way to use the command.
+   I've realized that using `cd` while in the directory `/home` was probably the worst way to test what `cd` does without arguments. So, in the corrected version we will start in another directory `/home/lecture1`. In this case, we can more clearly see that what `cd` does without arguments is move us back to the home directory which is `/home` for me. This produces no errors and is a completely valid way to use the command.
 
    ```
    WORKING DIRECTORY: /home/lecture1
    
-   1   [user@sahara ~]$ cd lecture1
-   2   [user@sahara ~/lecture1]$ cd
-   3   [user@sahara ~]$ pwd
-   4   /home
+   1   [user@sahara ~/lecture1]$ cd
+   2   [user@sahara ~]$ pwd
+   3   /home
    ```
 
 3. **<ins>Directory Path Argument</ins>**
