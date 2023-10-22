@@ -10,7 +10,7 @@ First we will examine (1) using the command without arguments, (2) using the com
 
 ### File System
 <div align="center">
-   <img src="lab01_filesystem.png" width="400px"/>
+   <img src="img/lab01_filesystem.png" width="400px"/>
 </div>
 
 ---
