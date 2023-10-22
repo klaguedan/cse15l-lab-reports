@@ -38,6 +38,7 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>After adding one message.</p>
                 <img src="img/lab02_part1-add1.png" width="500px"/>
             </div>
+            <br>
             <div align="left">
                 <b>Methods Used:</b>
                     <ul>
@@ -57,6 +58,7 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>After adding two messages.</p>
                 <img src="img/lab02_part1-add2.png" width="600px"/>
             </div>
+            <br>
             <div align="left">
                 <b>Methods Used:</b>
                     <ul>
