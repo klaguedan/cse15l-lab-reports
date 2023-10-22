@@ -81,8 +81,8 @@ class StringServer {
 
 ## Part 2
 
-
-<table align="center">
+<center>
+<table>
   <tr>
     <td>
       <b>Private Key:</b> The path to the private key on my personal computer <br>is <code>/c/Users/katri/.ssh/id_rsa</code>
@@ -116,6 +116,7 @@ class StringServer {
     </td>
   </tr>
 </table>
+</center>
 
 
 ---
