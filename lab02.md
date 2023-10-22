@@ -73,7 +73,7 @@ The code for my web server StringServer is [here](#my-server-code).
 </table>
 </center>
 
-### Web Server Code for StringServer.java<a name="my-server-code"></a>
+### StringServer.java<a name="my-server-code"></a>
 
 ```java
 /*
