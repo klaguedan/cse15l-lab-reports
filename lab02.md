@@ -80,6 +80,8 @@ class StringServer {
 ---
 
 ## Part 2
+
+
 <table align="center">
   <tr>
     <td>
