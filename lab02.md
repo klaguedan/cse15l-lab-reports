@@ -1,4 +1,4 @@
-# Lab Report 2 - Servers and SSH Keys
+ # Lab Report 2 - Servers and SSH Keys
 
 Oct. 22, 2023
 
@@ -7,6 +7,8 @@ Hello everyone! This time I will explain how a particular web server works and v
 ---
 
 ## 1️⃣ The Web Server
+
+The code for my web server StringServer is [here](#my-server-code).
 
 <center>
 <table>
@@ -19,7 +21,7 @@ Hello everyone! This time I will explain how a particular web server works and v
              <div>
                 <b>Methods Used:</b>
                     <ul>
-                        <li><code>handleRequest()</code></li>
+                        <li><code>handleRequest()</code>: The URI</li>
                     </ul>
                 <b>Relevant Fields:</b>
                     <ul>
@@ -69,7 +71,7 @@ Hello everyone! This time I will explain how a particular web server works and v
 </table>
 </center>
 
-### Web Server Code for StringServer.java
+### Web Server Code for StringServer.java<a name="my-server-code"></a>
 
 ```java
 /*
