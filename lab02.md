@@ -8,7 +8,24 @@ Hello everyone! This time I will explain how a particular web server works and v
 
 ## 1️⃣ The Web Server
 
+
+<div align="center">
+    <img src="img/lab02_part1-home.png" width="400px/>
+</div>
+
+        
+<div align="center">
+   <img src="img/lab02_part1-add1.png" width="500px"/>
+</div>
+
+
+<div align="center">
+   <img src="img/lab02_part1-add2.png" width="600px"/>
+</div>
+
+
 ### Web Server Code for StringServer.java
+
 ```java
 /*
 **  The template for this server is from https://github.com/ucsd-cse15l-f23/wavelet
@@ -65,17 +82,6 @@ class StringServer {
 }
 
 ```
-
-<div align="center">
-   <img src="img/lab02_part1-home.png" width="400px"/>
-  
-</div>
-<div align="center">
-   <img src="img/lab02_part1-add1.png" width="500px"/>
-</div>
-<div align="center">
-   <img src="img/lab02_part1-add2.png" width="600px"/>
-</div>
 
 ---
 
