@@ -6,7 +6,7 @@ Hello everyone! This time I will explain how a particular web server works and v
 
 ---
 
-## Part 1
+## 1️⃣ The Web Server
 
 ### Web Server Code for StringServer.java
 ```java
@@ -79,7 +79,7 @@ class StringServer {
 
 ---
 
-## Part 2
+## 2️⃣ SSH
 
 <center>
 <table>
@@ -121,6 +121,6 @@ class StringServer {
 
 ---
 
-## Part 3
+## 3️⃣ New Things
 
 Labs 2 and 3 have been big learning opportunities for me. It was my first time securely connecting to a remote server such as ieng6. Related to this, I learned that there is a way to connect to a remote server and skip the password login by using SSH keys. I thought it was very cool that the computer can generate a randomart image.
