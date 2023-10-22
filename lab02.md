@@ -183,4 +183,4 @@ class StringServer {
 
 ## 3️⃣ New Things
 
-Labs 2 and 3 have been big learning opportunities for me. It was my first time securely connecting to a remote server such as ieng6. Related to this, I learned that there is a way to connect to a remote server and skip the password login by using SSH keys. I thought it was very cool that the computer can generate a randomart image.
+Labs 2 and 3 have been big learning opportunities for me. It was my first time securely connecting to a remote server such as ieng6. Related to this, I learned that there is a way to connect to a remote server and skip the password login by using SSH keys. For me, this will definitely streamline the process of working on the remote server because I always ran into trouble entering my password.
