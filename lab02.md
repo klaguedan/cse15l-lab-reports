@@ -73,7 +73,9 @@ The code for my web server StringServer is [here](#my-server-code).
 </table>
 </center>
 
+
 ### StringServer.java<a name="my-server-code"></a>
+
 
 ```java
 /*
@@ -135,6 +137,7 @@ class StringServer {
 
 ---
 
+
 ## 2️⃣ SSH
 
 <center>
@@ -176,6 +179,7 @@ class StringServer {
 
 
 ---
+
 
 ## 3️⃣ New Things
 
