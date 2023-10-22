@@ -18,7 +18,7 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>This is the web server as it first starts and there is no added path.</p>
                 <img src="img/lab02_part1-home.png" width="400px"/>
             </div>
-             <div>
+             <div align="left">
                 <b>Methods Used:</b>
                     <ul>
                         <li><code>handleRequest()</code>: The URI</li>
@@ -37,7 +37,7 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>After adding one message.</p>
                 <img src="img/lab02_part1-add1.png" width="500px"/>
             </div>
-            <div>
+            <div align="left">
                 <b>Methods Used:</b>
                     <ul>
                         <li><code>handleRequest()</code></li>
@@ -56,7 +56,7 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>After adding two messages.</p>
                 <img src="img/lab02_part1-add2.png" width="600px"/>
             </div>
-            <div>
+            <div align="left">
                 <b>Methods Used:</b>
                     <ul>
                         <li><code>handleRequest()</code></li>
