@@ -8,21 +8,66 @@ Hello everyone! This time I will explain how a particular web server works and v
 
 ## 1️⃣ The Web Server
 
-
-<div align="center">
-    <img src="img/lab02_part1-home.png" width="400px/>
-</div>
-
-        
-<div align="center">
-   <img src="img/lab02_part1-add1.png" width="500px"/>
-</div>
-
-
-<div align="center">
-   <img src="img/lab02_part1-add2.png" width="600px"/>
-</div>
-
+<center>
+<table>
+    <tr>
+        <td>
+            <div align="center">
+                <p>This is the web server as it first starts and there is no added path.</p>
+                <img src="img/lab02_part1-home.png" width="400px"/>
+            </div>
+             <div>
+                <b>Methods Used:</b>
+                    <ul>
+                        <li><code>handleRequest()</code></li>
+                    </ul>
+                <b>Relevant Fields:</b>
+                    <ul>
+                        <li><code>myString = ""</code></li>
+                        <li><code>myNum = 1</code></li>
+                    </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div align="center">
+                <p>After adding one message.</p>
+                <img src="img/lab02_part1-add1.png" width="500px"/>
+            </div>
+            <div>
+                <b>Methods Used:</b>
+                    <ul>
+                        <li><code>handleRequest()</code></li>
+                    </ul>
+                <b>Relevant Fields:</b>
+                    <ul>
+                        <li><code>myString = "1. I am working on this lab\n"</code></li>
+                        <li><code>myNum = 1</code></li>
+                    </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div align="center">
+                <p>After adding two messages.</p>
+                <img src="img/lab02_part1-add2.png" width="600px"/>
+            </div>
+            <div>
+                <b>Methods Used:</b>
+                    <ul>
+                        <li><code>handleRequest()</code></li>
+                    </ul>
+                <b>Relevant Fields:</b>
+                    <ul>
+                        <li><code>myString = "1. I am "MK</code></li>
+                    </ul>
+            </div>
+        </td>
+    </tr>
+</table>
+</center>
 
 ### Web Server Code for StringServer.java
 
