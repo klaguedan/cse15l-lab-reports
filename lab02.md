@@ -64,7 +64,7 @@ The code for my web server StringServer is [here](#my-server-code).
                     </ul>
                 <b>Relevant Fields:</b>
                     <ul>
-                        <li><code>myString = "1. I am working on this lab\n2. as I watch my boyfriend play the new spiderman game\n"</code>: The field changes once more to account for the second request.
+                        <li><code>myString = "1. I am working on this lab\n2. as I watch my boyfriend play the new spiderman game\n"</code>: The field changes once more to account for the second request.</li>
                         <li><code>myNum = 3</code>: Changes again because it is increased by one after every request. It is now ready to be used by the third request.</li>
                     </ul>
             </div>
