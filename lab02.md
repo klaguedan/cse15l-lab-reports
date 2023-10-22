@@ -1,8 +1,8 @@
- # Lab Report 2 - Servers and SSH Keys
+# Lab Report 2 - Servers and SSH Keys
 
 Oct. 22, 2023
 
-Hello everyone! This time I will explain how a particular web server works and verify that my SSH keys on my local computer and UCSD server account work.
+Hello everyone! This time I will explain how part of particular web server works and verify that my SSH keys on my local computer and UCSD server account work.
 
 ---
 
@@ -18,17 +18,18 @@ The code for my web server StringServer is [here](#my-server-code).
                 <p>This is the web server as it first starts and there is no added path.</p>
                 <img src="img/lab02_part1-home.png" width="400px"/>
             </div>
-             <div align="left">
-                <b>Methods Used:</b>
-                    <ul>
-                        <li><code>handleRequest()</code>: The URI</li>
-                    </ul>
-                <b>Relevant Fields:</b>
-                    <ul>
-                        <li><code>myString = ""</code></li>
-                        <li><code>myNum = 1</code></li>
-                    </ul>
-            </div>
+            <br>
+            <div align="left">
+               <b>Methods Used:</b>
+                   <ul>
+                       <li><code>handleRequest(URI url)</code>: The argument is <code>localhost:5050</code> and even though there is no added path yet, the default behavior is to send us to the "root" as if we had <code>localhost:5050/</code>.</li>
+                   </ul>
+               <b>Relevant Fields:</b>
+                   <ul>
+                       <li><code>myString = ""</code>: This is the default empty value. Nothing has changed yet because the user has not made an add-message request.</li>
+                       <li><code>myNum = 1</code>: Also at the default value and has not changed since no request has been made. 1 is ready for the first message.</li>
+                   </ul>
+           </div>
         </td>
     </tr>
     <tr>
@@ -40,12 +41,12 @@ The code for my web server StringServer is [here](#my-server-code).
             <div align="left">
                 <b>Methods Used:</b>
                     <ul>
-                        <li><code>handleRequest()</code></li>
+                        <li><code>handleRequest(URI url)</code>: The argument here is <code>localhost:5050/add-message?s=I am working on this lab</code></li>
                     </ul>
                 <b>Relevant Fields:</b>
                     <ul>
-                        <li><code>myString = "1. I am working on this lab\n"</code></li>
-                        <li><code>myNum = 1</code></li>
+                        <li><code>myString = "1. I am working on this lab\n"</code>: This field has changed because my code notices that the url contains <code>add-message</code> and has a valid query. I format the pre-request value of <code>myNum</code> and the user-queried string <code>"I am working on this lab"</code> to look like a list which is then concatenated to <code>myString</code> and returned to show on the web server.</li>
+                        <li><code>myNum = 2</code>: This value has changed because it is increased by one after every request. It is now ready to be used by the second string concatenation.</li>
                     </ul>
             </div>
         </td>
@@ -59,11 +60,12 @@ The code for my web server StringServer is [here](#my-server-code).
             <div align="left">
                 <b>Methods Used:</b>
                     <ul>
-                        <li><code>handleRequest()</code></li>
+                        <li><code>handleRequest(URI url)</code>: The argument here is <code>localhost:5050/add-message?s=as I watch my boyfriend play the new spiderman game</code></li>
                     </ul>
                 <b>Relevant Fields:</b>
                     <ul>
-                        <li><code>myString = "1. I am "MK</code></li>
+                        <li><code>myString = "1. I am working on this lab\n2. as I watch my boyfriend play the new spiderman game\n"</code>: The field changes once more to account for the second request.
+                        <li><code>myNum = 3</code>: Changes again because it is increased by one after every request. It is now ready to be used by the third request.</li>
                     </ul>
             </div>
         </td>
@@ -76,7 +78,8 @@ The code for my web server StringServer is [here](#my-server-code).
 ```java
 /*
 **  The template for this server is from https://github.com/ucsd-cse15l-f23/wavelet
-**  and has been altered by me for the purposes of my Lab Report 2.
+**  and the Handler class and handleRequest() method have been altered by me
+**  for the purposes of my Lab Report 2.
 */
 
 import java.io.IOException;
@@ -105,8 +108,8 @@ class Handler implements URLHandler {
             if (parameters[0].equals("s")) {
                 // Concatenate myString with whatever the user put after the =
                 // and increment myNum to increase the list number for the next add
-                myString += String.format("%d. %s\n", myNum++, parameters[1]);
-                return myString;
+                myString += String.format("%d. %s\n", myNum++, parameters[1]);      // Ex: 1. user-string here
+                return myString;                                                    //     2. second string here etc
             }
             return "That didn't work oh no - double check your query!";
         } else {
