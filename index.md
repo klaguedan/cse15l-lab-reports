@@ -4,3 +4,5 @@ Hi, my name is Katrina :)
 [Lab 1 - File System](lab01.md)
 
 [Lab 2 - Servers and SSH](lab02.md)
+
+[Lab 2 - Bugs and Commands](lab03.md)
