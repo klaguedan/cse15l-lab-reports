@@ -202,10 +202,6 @@ $ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
 
 A video of me scrolling through the file reader with the mouse. Visually, it is almost like moving through the viewer with the arrow keys.
 
-<div align="center">
-  <video>
-    <source src="img/lab03_part2-scroll.mp4" type="video/mp4">
-  </video>
-</div>
+
 
 
