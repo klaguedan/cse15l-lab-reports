@@ -181,10 +181,31 @@ One interesting thing I noticed about `less` is that we can add options even as 
 ---
 
 ### --mouse: scroll with the mouse
-For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or keyboard to navigate or don't like how jumpy skipping the pages looks.
+For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or the arrow keys.
 
-Since it is difficult to demonstrate what this option does in a code block, I hope that a video suffices.
+Since it is a bit impossible to demonstrate the output of this command option in a code block, I hope that a video I've recorded can replace it.
 
-```bash
+<br>
 
+**Input**
+```shell
+COMMAND
+———————
+
+katri@dark-chocolate MINGW64 ~/OneDrive/Documents/GitHub/lab5/docsearch (main)
+$ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
 ```
+
+<br>
+
+**Output**
+
+A video of me scrolling through the file reader with the mouse. Visually, it is almost like moving through the viewer with the arrow keys.
+
+<div align="center">
+  <video>
+    <source src="img/lab03_part2-scroll.mp4" type="video/mp4">
+  </video>
+</div>
+
+
