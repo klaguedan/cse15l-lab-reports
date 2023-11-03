@@ -29,6 +29,7 @@ is succesful if the following conditions are met:
 
 ```java
 JUNIT TESTS
+———————————
 
 @Test
 public void test_fail_dup() {
@@ -55,6 +56,7 @@ public void test_fail_same() {
 
 ```java
 JUNIT TESTS
+———————————
 
 @Test
 public void test_nonfail_single() {
@@ -87,7 +89,7 @@ The tests that failed were `test_fail_dup()` and `test_fail_same()`.
 <br>
 
 <div align="center">
-  <img src="img/lab03_junit_output.png" width="400px"/>
+  <img src="img/lab03_junit_output.png" size="500px"/>
 </div>
 
 ---
@@ -164,7 +166,7 @@ So, in order to remove the lowest number just once, I replaced the numerator in 
 
 Now, all the tests pass!
 <div align="center">
-  <img src="img/lab03_junit_passes.png" width="400px"/>
+  <img src="img/lab03_junit_passes.png" size="450px"/>
 </div>
 
 ## 2️⃣ Researching Commands
@@ -178,7 +180,7 @@ One interesting thing I noticed about `less` is that we can add options even as 
 
 ---
 
-### Option `--mouse`: scroll with the mouse
+### --mouse: scroll with the mouse
 For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or the arrow keys.
 
 Since it is a bit impossible to demonstrate the output of this command option in a code block, I hope that a video I've recorded can replace it.
@@ -187,6 +189,9 @@ Since it is a bit impossible to demonstrate the output of this command option in
 
 **Input**
 ```shell
+COMMAND
+———————
+
 katri@dark-chocolate MINGW64 ~/OneDrive/Documents/GitHub/lab5/docsearch (main)
 $ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
 ```
@@ -196,9 +201,3 @@ $ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
 **Output**
 
 A video of me scrolling through the file reader with the mouse. Visually, it is almost like moving through the viewer with the arrow keys.
-
-https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/ff239abd-f366-4de7-9cde-ef621f3ce212
-
-
-
-
