@@ -2,7 +2,7 @@
 
 Nov. 5, 2023
 
-In this lab report, we will take a closer look at one of the bugs from Week 4's lab and examine its behavior under certain circumstances and its fixes. Additionally, we will also research additional options for the `less` command. 
+In this lab report, we will take a closer look at one of the bugs from Week 4's lab and examine its behavior under certain circumstances and its fixes. Additionally, I will also research additional options for the `less` command. 
 
 ---
 
@@ -23,11 +23,14 @@ is succesful if the following conditions are met:
 ---
 ### The Inputs
 <!--Failure inducing input (JUnit test and code block)-->
-Failure Inducing Inputs:
+**Failure Inducing Inputs:**
 - `{4,4,5,8}`
 - `{7,7,7}`
 
 ```java
+JUNIT TESTS
+———————————
+
 @Test
 public void test_fail_dup() {
     double[] input = {4, 4, 5, 8};
@@ -39,19 +42,21 @@ public void test_fail_dup() {
 public void test_fail_same() {
     double[] input = {7,7,7};
     double expected = (double)(7 + 7)/2;
-    assertEquals(expected, ArrayExamples.averageWithoutLowest(input), 0.0001);quals(expected, ArrayExamples.averageWithoutLowest(input), 0.01);
+    assertEquals(expected, ArrayExamples.averageWithoutLowest(input), 0.0001);
 }
 ```
 
+<br>
 
 <!--Non-failure input (JUnit and code block)-->
-Non-Failure inducing inputs:
+**Non-Failure inducing inputs:**
 - `{9}`
 - `{ }`
 - `{1.1,2,3,4}`
 
 ```java
-JUNIT TEST
+JUNIT TESTS
+———————————
 
 @Test
 public void test_nonfail_single() {
@@ -79,24 +84,29 @@ public void test_nonfail3_unique() {
 ### The Outputs
 
 <!--output of both tests-->
+The tests that failed were `test_fail_dup()` and `test_fail_same()`.
+
+<br>
 
 <div align="center">
-  <img src="img/lab03_junit_output.png"/>
+  <img src="img/lab03_junit_output.png" size="500px"/>
 </div>
 
 ---
 ### Fixing the Code
 <!--The bug before/after fix, explain why the fix works-->
 
-Looking at the tests that failed, a recurring pattern is that `averageWithoutLowest()` is having trouble handling inputs where the lowest number appears more than once.
+Looking at the tests that failed, a recurring pattern is that `averageWithoutLowest()` has trouble handling inputs where the lowest number appears more than once.
 
-Specifically, in the test `test_fail_dup` (input: `{4,4,5,8}`), what we expected was `5.667` as the result of `(4+5+8)/3`. But what the computer did was calculate `(5+8)/3` which resulted in the erroneous value of `4.333`.
+Specifically, in the test `test_fail_dup()` (input: `{4,4,5,8}`), what we expected was `5.667` as the result of `(4+5+8)/3`. But what the computer did was calculate `(5+8)/3` which resulted in the erroneous value of `4.333`.
 
-In the case of `test_fail_same` (input: `{7,7,7}`), we expect a returned value of `7` from the calculation `(7 + 7)/2`. However, what happened was that the method saw that `7` was the smallest value and therefore kept each instance of a `7` out of the calculations altogether. Thus, the wrong result returned was `0`.
+In the case of `test_fail_same()` (input: `{7,7,7}`), we expect a returned value of `7` from the calculation `(7 + 7)/2`. However, what happened was that the method saw that `7` was the smallest value and therefore kept each instance of a `7` out of the calculations altogether. Thus, the wrong result returned was `0`.
 
 Also, `averageWithoutLowest()` succeeded in the case where all numbers were unique such as in `test_nonfail3_unique()` (input: `{1.1,2,3,4}`). So it must be the repeating low numbers that are causing problems.
 
-Before:
+<br>
+
+**Before Fixes:**
 ```java
 static double averageWithoutLowest(double[] arr) {
   // 0 or 1 elements; works as expected
@@ -121,7 +131,7 @@ static double averageWithoutLowest(double[] arr) {
 
 <br>
 
-After:
+**After Fixes:**
 ```java
 static double averageWithoutLowest(double[] arr) {
   // 0 or 1 elements; works as expected
@@ -144,20 +154,37 @@ static double averageWithoutLowest(double[] arr) {
   return (sum - lowest) / (arr.length - 1);
 }
 ```
-The reason why this fix works is because I removed the part of the code that checks if the current number in `arr` was equal to the lowest number. `if(num != lowest) { sum += num; }` is a problem because if you have multiple instances of the lowest number, because it doesn't just remove one of them, it removes ALL of them. Which, as we said earlier was not the desired outcome.
+
+<br>
+
+The reason why this fix works is because I removed the part of the code that checked if the current number in `arr` was equal to the lowest number. 
+
+`if(num != lowest) { sum += num; }` is a problem because if you have multiple instances of the lowest number, it doesn't just remove one of them from the sum, it removes ALL of them. Which, as we said earlier was not the desired outcome.
 
 So, in order to remove the lowest number just once, I replaced the numerator in the return statement to be `(sum - lowest)`. Thus preserving all of the other lowest numbers if they happend to show up more than once.
 
 
 Now, all the tests pass!
 <div align="center">
-  <img src="img/lab03_junit_passes.png"/>
+  <img src="img/lab03_junit_passes.png" size="450px"/>
 </div>
 
 ## 2️⃣ Researching Commands
 
 <!--Researching `less`-->
+In this section, I will examine more uses or options for the `less` command. 
 
+One interesting thing I noticed about `less` is that we can add options even as we view the file. We don't have to add all the options all at once in the command line. 
 
 <!-- 4 options or alternate uses 2 ex. each, cite source for each-->
 
+---
+
+### --mouse: scroll with the mouse
+For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or keyboard to navigate or don't like how jumpy skipping the pages looks.
+
+Since it is difficult to demonstrate what this option does in a code block, I hope that a video suffices.
+
+```bash
+
+```
