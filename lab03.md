@@ -327,9 +327,6 @@ This is an option that only works once the viewer is open.
         mutations.
   ```
 
-<br>
-<br>
-
 This option acts like the command `grep` in a way; it shows only the lines in the file that match a pattern. This can be useful if we want to check if a particular topic shows up. However, this feature can be more useful when combined with other ones such as the next one.
 
 ---
