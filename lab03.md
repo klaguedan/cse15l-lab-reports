@@ -216,7 +216,9 @@ For the `--mouse` option, it allows us to view the file and scroll through the l
   The file contents and what the user sees don't change, but the user is now able to scroll through the `less` viewer with mouse input.
 
 
-https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/150798ec-b5fa-449a-96a3-96a458d7a4e0
+<video>
+    <source src="https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/150798ec-b5fa-449a-96a3-96a458d7a4e0" type="vide/mp4">
+</video>
 
 
 <br>
@@ -236,8 +238,9 @@ https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/150798ec-b5fa-4
   (Nothing new is visible, file wise. However, for the user, the scroll direction is now reversed).
 
 
-https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/41ef6f61-6351-4e89-b551-6b23970d4126
-
+<video>
+    <source src="https://github.com/klaguedan/cse15l-lab-reports/assets/146864422/41ef6f61-6351-4e89-b551-6b23970d4126" type="vide/mp4">
+</video>
 
 <br>
 
