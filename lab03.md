@@ -194,16 +194,44 @@ For the `--mouse` option, it allows us to view the file and scroll through the l
 
   **Output**
   ```
+  Session 2.
+  Identifying ED Patients with Alcohol Problems
 
+  Robert Woolard, MD
+  Many patients in the emergency department (ED) have alcohol
+  problems, and they can be identified.1 Research on techniques used
+  to identify these patients has been conducted, but several areas of
+  interest should be addressed by further research. We need to
+  further examine and refine alcohol-screening questionnaires in the
+  ED. We need to determine the sequence and combination of questions
+  and tests that constitute the best screening process. We need to
+
+  .
+  .
+  .
+
+  (etc)
   ```
-  Video Description: I scroll through the file reader with my laptop's trackpad (mouse). Visually, it is almost like moving through the viewer with the arrow keys.
+
+  The file contents and what the user sees don't change, but the user is now able to scroll through the `less` viewer with mouse input.
 
 <br>
 <br>
 
 **EXAMPLE 2**
 
-  In this example, we will show what happens with `mouse` when we capitalize all the letters. So now, our option is `--MOUSE`. What happens is that we are still able to scroll through the viewer, just now the directions are reversed. The page will move down if the user scrolls in the down direction.
+  In this example, we will show what happens with `mouse` when we capitalize all the letters. So now, our option is `--MOUSE`. What happens is that we are still able to scroll through the viewer, just now the directions are reversed. The page will move down if the user scrolls in the down direction. We can actually run this command while in the viewer; we don't have to type out the `less` command and file all over again.
+  So if the user has a preference for which way the viewer scrolls, this option would be useful.
+
+  **File Viewer Input**
+  ```shell
+  --MOUSE
+  ```
+
+  **Output**
+  (Nothing visible, file wise. However, for the user, the scroll direction is now reversed).
+
+In this video, it may be easier to see the effects of each command.
 
 <br>
 
@@ -213,7 +241,6 @@ For the `--mouse` option, it allows us to view the file and scroll through the l
 
 This is an option that only works once the viewer is open.
 
-<br>
 <br>
 
 **EXAMPLE 1**
@@ -255,6 +282,8 @@ This is an option that only works once the viewer is open.
             the treatment groups, the relative comparison of the
 
   ```
+
+  In this example, I receive every line in `1468-6708-3-4.txt` that has the word "treatment."
 
 <br>
 <br>
@@ -307,7 +336,6 @@ This option acts like the command `grep` in a way; it shows only the lines in th
 
 ### `-N`: show line numbers while viewing.
 
-<br>
 <br>
 
 **EXAMPLE 1**
@@ -386,9 +414,6 @@ In this example, all the lines of text in `journal.pbio.0020042.txt` are numbere
   111 spend the money," said Christopher Holly, a paralegal with Indian
   ```
 
-<br>
-<br>
-
 Here, I use `-N` in combination with `&/money` so that it shows every line containing "money" and shows the line number from the original file! This is useful for keeping note of where specifically a particular topic showed up in a file. 
 
 ---
@@ -458,12 +483,15 @@ DraftRecom-PDF.txt (file 1 of 4)
   Alcohol problems defined
   Session2-PDF.txt (file 2 of 4)
   ```
+  
+  In this example, I start from the first file `DraftRecom-PDF.txt` and tell `less` to show the next file which is `Session2-PDF.txt`.
+
 <br>
 <br>
 
 **EXAMPLE 2**
 
-In this example, we will say we have reached `Session4-PDF.txt (file 4 of 4)` and now we want to go backwards.
+  In this example, we will assum that we have reached `Session4-PDF.txt (file 4 of 4)` and now we want to go backwards.
 
   **File Viewer Input**
   ```shell
@@ -491,4 +519,6 @@ In this example, we will say we have reached `Session4-PDF.txt (file 4 of 4)` an
   occasioned a call for an effective method of intervening with
   Session3-PDF.txt (file 3 of 4)
   ```
+
+  In this example, we tell `less` to show the previous file. Both commands, `:n` and `:p` are helpful when we want to use `less` with many files in one sitting and want to have quick viewing access to each one. The user can go back and forth at will.
 
