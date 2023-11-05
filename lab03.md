@@ -186,7 +186,7 @@ For the `--mouse` option, it allows us to view the file and scroll through the l
 
 **EXAMPLE 1**
 
-  **Input**
+  **Command Line Input**
   ```shell
   katri@dark-chocolate MINGW64 ~/OneDrive/Documents/GitHub/lab5/docsearch (main)
   $ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
