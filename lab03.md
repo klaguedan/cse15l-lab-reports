@@ -450,6 +450,9 @@ sequence of the recommendations did not imply a priority order.
 Because the published recommendations will include supporting text,
 DraftRecom-PDF.txt (file 1 of 4)
 ```
+
+Notice that in the last line of the output it shows, in additional to the file name, how many other files there are that have been loaded and which number "page" or file we are currently on.
+
 <br>
 
 **EXAMPLE 1**
