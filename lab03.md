@@ -171,7 +171,7 @@ Now, all the tests pass!
 ## 2️⃣ Researching Commands
 
 <!--Researching `less`-->
-In this section, I will examine more uses or options for the `less` command. I referenced this site for researching some extended uses for this command: https://man7.org/linux/man-pages/man1/less.1.html
+In this section, I will examine more uses or options for the `less` command. I referenced this site for researching some extended uses for this command: [https://man7.org/linux/man-pages/man1/less.1.html](https://man7.org/linux/man-pages/man1/less.1.html)
 
 One interesting thing I noticed about `less` is that we can add options even as we view the file. We don't have to add all the options all at once in the command line. 
 
