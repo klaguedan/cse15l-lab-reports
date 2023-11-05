@@ -18,8 +18,6 @@ is succesful if the following conditions are met:
 - When the array has 2 or more elements: The method will calculate the average of the values without the smallest number. <ins>However, if the smallest number appears more than once, only one instance of it will be removed.</ins>
 - When the array has 0 or 1 elements: The method will return 0.
 
-<br>
-
 ---
 ### The Inputs
 <!--Failure inducing input (JUnit test and code block)-->
@@ -167,6 +165,9 @@ Now, all the tests pass!
   <img src="img/lab03_junit_passes.png" width="450px"/>
 </div>
 
+<br>
+<br>
+
 ## 2️⃣ Researching Commands
 
 <!--Researching `less`-->
@@ -179,9 +180,8 @@ One interesting thing I noticed about `less` is that we can add options even as 
 ---
 
 ### `--mouse`: scroll with the mouse
-For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or the arrow keys and we simply want another way to navigate through the file viewer.
+For the `--mouse` option, it allows us to view the file and scroll through the lines as if we were scrolling through a page. This can be useful if we don't like using the spacebar or the arrow keys and we simply want another way to navigate through the file viewer. It is worth noting that once the mouse input is enabled, I was not able to select text and copy it from the terminal. However, doing `--mouse` again turns the mouse input off.
 
-<br>
 <br>
 
 **EXAMPLE 1**
@@ -192,10 +192,10 @@ For the `--mouse` option, it allows us to view the file and scroll through the l
   $ less --mouse technical/government/Alcohol_Problems/Session2-PDF.txt
   ```
 
-  <br>
-
   **Output**
+  ```
 
+  ```
   Video Description: I scroll through the file reader with my laptop's trackpad (mouse). Visually, it is almost like moving through the viewer with the arrow keys.
 
 <br>
