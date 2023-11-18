@@ -17,6 +17,10 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > These keystrokes are used for my specific login into the UCSD ieng6 computer.
 
+<div align="center">
+  <img src="img/lab04_step-01.png" width="300px"/>
+</div>
+
 <br>
 
 ## 2️⃣ Clone Repository
@@ -33,6 +37,10 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 > 
 > I paste the SSH URL with `<CTRL>+V` here to save time.
 
+<div align="center">
+  <img src="img/lab04_step-02.png" width="500px"/>
+</div>
+
 <br>
 
 ## 3️⃣ Run Tests (and fail)
@@ -42,6 +50,10 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 **Final Command:** `bash test.sh`
 
 > Runs the tests. I am able to use `<TAB>` to autocomplete the name of the script.
+
+<div align="center">
+  <img src="img/lab04_step-03.png" width="600px"/>
+</div>
 
 <br>
 
@@ -83,6 +95,10 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Save changes and quit vim.
 
+<div align="center">
+  <img src="img/lab04_step-04.png" width="600px"/>
+</div>
+
 <br>
 
 ## 5️⃣ Run Tests (and pass)
@@ -92,6 +108,10 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 **Final Command:** `bash test.sh`
 
 > Recovers the necessary command `bash test.sh` since it is in the terminal history for two commands ago.
+
+<div align="center">
+  <img src="img/lab04_step-05.png" width="300px"/>
+</div>
 
 <br>
 
@@ -119,6 +139,9 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Pushes the changes to GitHub.
 
+<div align="center">
+  <img src="img/lab04_step-06.png" width="400px"/>
+</div>
 
 
 Thank you for reading!
