@@ -17,6 +17,8 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > These keystrokes are used for my specific login into the UCSD ieng6 computer.
 
+<br>
+
 <div align="center">
   <img src="img/lab04_step-01.png" width="300px"/>
 </div>
@@ -37,6 +39,8 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 > 
 > I paste the SSH URL with `<CTRL>+V` here to save time.
 
+<br>
+
 <div align="center">
   <img src="img/lab04_step-02.png" width="500px"/>
 </div>
@@ -50,6 +54,8 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 **Final Command:** `bash test.sh`
 
 > Runs the tests. I am able to use `<TAB>` to autocomplete the name of the script.
+
+<br>
 
 <div align="center">
   <img src="img/lab04_step-03.png" width="600px"/>
@@ -65,7 +71,7 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Opens ListExamples.java in vim using autocomplete on the file name and extension.
 
----
+<br>
 
 **Keys Pressed:** `<SHIFT>+<;>` 44 `<ENTER>`
 
@@ -73,7 +79,7 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Jumps to 44th line of editor.
 
----
+<br>
 
 **Keys Pressed:** 12 `<SHIFT>+<\>`
 
@@ -81,19 +87,21 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Jumps to 12th column of current line. So now, the cursor is at (44,12) in the file, exactly where the fix needs to happen.
 
----
+<br>
 
 **Keys Pressed:** r2
 
 > Replaces character at cursor with 2.
 
----
+<br>
 
 **Keys Pressed:** `<SHIFT>+<;>` wq `<ENTER>`
 
 **Final Command:** `:wq`
 
 > Save changes and quit vim.
+
+<br>
 
 <div align="center">
   <img src="img/lab04_step-04.png" width="600px"/>
@@ -109,6 +117,8 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Recovers the necessary command `bash test.sh` since it is in the terminal history for two commands ago.
 
+<br>
+
 <div align="center">
   <img src="img/lab04_step-05.png" width="300px"/>
 </div>
@@ -123,7 +133,7 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Adds the file to the commit. `<TAB>` will autocomplete to `ListExamples.java` since it was the only file edited.
 
----
+<br>
 
 **Keys Pressed:** git `<SPACE>` commit `<SPACE>` `<->`m `<SPACE>` `<SHIFT>+<'>` Fixed `<SPACE>` typo `<SHIFT>+<'>` `<ENTER>`
 
@@ -131,7 +141,7 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Finalizes the commit and the `-m` makes it so that we can add a commit message from the command line.
 
----
+<br>
 
 **Keys Pressed:** git `<SPACE>` push `<SPACE>` origin `<ENTER>`
 
@@ -139,9 +149,14 @@ At the start of this, we will assume that I already have Visual Studio Code or a
 
 > Pushes the changes to GitHub.
 
+<br>
+
 <div align="center">
   <img src="img/lab04_step-06.png" width="400px"/>
 </div>
 
+<br>
+
+---
 
 Thank you for reading!
