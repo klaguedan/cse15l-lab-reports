@@ -8,3 +8,5 @@ Hi, my name is Katrina :)
 [Lab 3 - Bugs and Commands](lab03.md)
 
 [Lab 4 - Vim](lab04.md)
+
+[Lab 5 - Putting it All Together](lab05.md)
