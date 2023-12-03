@@ -10,6 +10,67 @@ In this lab report, Part 1 will go over an imaginary debugging scenario and Part
 
 First, a quick summary of what the student is trying to achieve. The student's objective will be to run the bash script `reverse-cheese.sh` with a string as an argument. The bash script and the `ReverseCheese.java` will search for cheeses in `cheese.txt` that match the string and reverse all the characters in that cheese. The results should show a `Regular` and `Reversed` cheese.
 
+
+<details>
+<summary><code>cheese.txt</code> before fixes</summary>
+<pre>
+Abbaye de Belloc
+Abbaye de Citeaux
+Abbaye du Mont des Cats
+Abertam
+Abondance
+Acapella
+Ackawi
+Acorn
+Adelost
+Affidelice au Chablis
+Afuega'l Pitu
+Airag
+Airedale
+Aisy Cendre
+Allgauer Emmentaler
+Alverca
+Ambert
+American Cheese
+.
+.
+.
+(it's just 653 lines of cheese)
+</pre>
+</details>
+
+<details>
+<summary><code>reverse-cheese.sh</code> before fixes</summary>
+<pre>
+# Save all cheeses that contain the user's argument
+# into a file called "reverse-cheese.txt"
+grep -i "$1" cheese.txt > to-reverse.txt
+
+# Compile Java file
+javac ReverseCheese.java
+INPUT=to-reverse.txt
+
+# the "read" command turns each line of to-reverse.txt
+# into a variable called LINE.
+while read LINE
+do
+  # Treat the current LINE as the arg[0] for ReverseCheese
+  java ReverseCheese "$LINE"
+done < "$INPUT" # Take in reverse-cheese.txt as input.
+</pre>
+</details>
+
+<details>
+<summary></summary>
+
+</details>
+
+<details>
+<summary></summary>
+
+</details>
+
+
 ---
 
 ### __<ins>Original Post</ins>__
@@ -17,7 +78,7 @@ First, a quick summary of what the student is trying to achieve. The student's o
 **STUDENT:** Hello! Whenever I run `reverse-cheese.sh` with a valid string argument, the correct cheeses are shown but they do not seem to be reversing correctly. I'm not sure which part of the code (script, java file, text file) is responsible for this.
 
 <div align="center">
-    <img src="img/lab05_symptom.png" width="400px"/>
+    <img src="img/lab05_symptom.png" width="300px"/>
 </div>
 
 <br>
@@ -53,6 +114,8 @@ VM Started: Set deferred breakpoint ReverseCheese:29
 Breakpoint hit: "thread=main", ReverseCheese.main(), line=29 bci=4
 29        String inputReversed = reverse(userInput);
 ```
+
+<br>
 
 Taking a closer look at the value of all variables when `reverse()` is called. Of particular note is the variable `toReverse[]` because it is a variable within the `reverse()` method that contains the elements of the input string that will be reversed.
 
@@ -105,6 +168,8 @@ Regular:  Vermont Cheddar Cheese
 Reversed: CheeseCheddarVermont
 ```
 
+<br>
+
 We expect the values in `toReverse[]` to be individual letters, not entire words. Thus, there must be something wrong with how the array is assigned its elements.
 
 In Line 14 of  `ReverseCheese.java`, the `split()` method is used on `userInput` to help assign elements to `toReverse[]`.
@@ -113,8 +178,20 @@ In Line 14 of  `ReverseCheese.java`, the `split()` method is used on `userInput`
 String[] toReverse = userInput.split(" ");
 ```
 
-The bug is that there is an extra space in the `split()` argument when there should be none!
+The space makes it so that the string is split where there is a space character (so separating words). However, we want the individual letters to be the elements so there cannot be a space. This is the bug.
 
+To fix it, simply change the argument in `split()` to quotes with nothing in between:
+
+```java
+String[] toReverse = userInput.split("");
+```
+
+Now, the string will be split across every character.
+
+<br>
+
+```
+```
 
 ## 2️⃣ Reflection
 
