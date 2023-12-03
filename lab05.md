@@ -8,40 +8,38 @@ In this lab report, Part 1 will go over an imaginary debugging scenario and Part
 
 ## 1️⃣🧀 Debugging Scenario
 
-First, a quick summary of what the student is trying to achieve. The student's objective will be to run the bash script `reverse-cheese.sh` with a string as an argument. The bash script and the `ReverseCheese.java` will search for cheeses in `cheese.txt` that match the string and reverse all the characters in that cheese. The results should show a `Regular` and `Reversed` cheese.
+First, a quick summary of what the student is trying to achieve. The student's objective will be to run the bash script `reverse-cheese.sh` with a string as an argument. The bash script will search for cheeses in `cheese.txt` that match the string, then send all matches to `ReverseCheese.java` to reverse all the characters in that cheese. The results should show a `Regular` and `Reversed` cheese.
 
+<br>
 
-<details>
-<summary><code>cheese.txt</code> before fixes</summary>
-<pre>
+### File Structure:
+
+```
+root/
+  ├ reverse-cheese.sh
+  ├ cheese.txt
+  └ ReverseCheese.java
+```
+
+<br>
+
+### `cheese.txt` before fixes:
+
+```
 Abbaye de Belloc
 Abbaye de Citeaux
 Abbaye du Mont des Cats
-Abertam
-Abondance
-Acapella
-Ackawi
-Acorn
-Adelost
-Affidelice au Chablis
-Afuega'l Pitu
-Airag
-Airedale
-Aisy Cendre
-Allgauer Emmentaler
-Alverca
-Ambert
-American Cheese
 .
 .
 .
 (it's just 653 lines of cheese)
-</pre>
-</details>
+```
 
-<details>
-<summary><code>reverse-cheese.sh</code> before fixes</summary>
-<pre>
+<br>
+
+### `reverse-cheese.sh` before fixes:
+
+```bash
 # Save all cheeses that contain the user's argument
 # into a file called "reverse-cheese.txt"
 grep -i "$1" cheese.txt > to-reverse.txt
@@ -57,18 +55,50 @@ do
   # Treat the current LINE as the arg[0] for ReverseCheese
   java ReverseCheese "$LINE"
 done < "$INPUT" # Take in reverse-cheese.txt as input.
-</pre>
-</details>
+```
 
-<details>
-<summary></summary>
+<br>
 
-</details>
+### `ReverseCheese.java` before fixes:
 
-<details>
-<summary></summary>
+```java
+public class ReverseCheese {
+  // Read the array back
+  public static String toString(String[] arr) {
+    String contents = "";
+    for (int i=0; i < arr.length; i++) {
+      contents += arr[i];
+    }
 
-</details>
+    return contents;
+  }
+
+  // Reverse the characters in the string
+  public static String reverse(String userInput) {
+    String[] toReverse = userInput.split(" ");
+
+    for (int i=0; i < toReverse.length/2; i++) {
+      String curr = toReverse[i];
+      String temp = toReverse[toReverse.length - i - 1];
+
+      toReverse[i] = temp;
+      toReverse[toReverse.length - i - 1] = curr;
+    }
+
+    return toString(toReverse);
+  }
+
+  public static void main(String[] args) {
+    String userInput = args[0];
+    String inputReversed = reverse(userInput);
+    
+    System.out.println("Regular:  " + userInput);
+    System.out.println("Reversed: " + inputReversed);
+    System.out.println();
+
+  }
+}
+```
 
 
 ---
@@ -168,7 +198,10 @@ Regular:  Vermont Cheddar Cheese
 Reversed: CheeseCheddarVermont
 ```
 
-<br>
+---
+
+
+### __<ins>The Fix</ins>__
 
 We expect the values in `toReverse[]` to be individual letters, not entire words. Thus, there must be something wrong with how the array is assigned its elements.
 
@@ -190,8 +223,75 @@ Now, the string will be split across every character.
 
 <br>
 
+Now when we do `jdb` again and check the same variable, the elements of `toReverse[]` will be all the characters in the input string.
+
+```bash
+(same commands and breakpoint as before)
+.
+.
+.
+main[1] step
+>
+Step completed: "thread=main", ReverseCheese.reverse(), line=16 bci=7
+16        for (int i=0; i < toReverse.length/2; i++) {
+
+# toReverse[] now has the correct elements. Each character is separated
+main[1] locals
+Method arguments:
+userInput = "Vermont Cheddar Cheese"
+Local variables:
+toReverse = instance of java.lang.String[22] (id=535)
+main[1] dump toReverse
+ toReverse = {
+"V", "e", "r", "m", "o", "n", "t", " ", "C", "h", "e", "d", "d", "a", "r", " ", "C", "h", "e", "e", "s", "e"
+}
+
+# Output is what we expect
+main[1] exit
+Regular:  Vermont Cheddar Cheese
+Reversed: eseehC raddehC tnomreV
 ```
+
+<br>
+
+Rerunning the student's command from the beginning, now every cheese result is reversed correctly:
+
+```bash
+$ bash reverse-cheese.sh brie
+Regular:  Brie
+Reversed: eirB
+
+Regular:  Brie au poivre
+Reversed: erviop ua eirB
+
+Regular:  Brie de Meaux
+Reversed: xuaeM ed eirB
+
+Regular:  Brie de Melun
+Reversed: nuleM ed eirB
+
+Regular:  Brie with pepper
+Reversed: reppep htiw eirB
+
+Regular:  Evansdale Farmhouse Brie
+Reversed: eirB esuohmraF eladsnavE
+
+Regular:  Gabriel
+Reversed: leirbaG
+
+Regular:  Jindi Brie
+Reversed: eirB idniJ
+
+Regular:  King Island Cape Wickham Brie
+Reversed: eirB mahkciW epaC dnalsI gniK
+
+Regular:  Somerset Brie
+Reversed: eirB tesremoS
+
+Regular:  Timboon Brie
+Reversed: eirB noobmiT
 ```
+
 
 ## 2️⃣ Reflection
 
